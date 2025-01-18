@@ -15,4 +15,4 @@ pub struct Event {
     pub list_of_event_assignments: Option<ListOfEventAssignments>,
     #[serde(flatten)]
     pub s_base: SBase, // todo pub id: Option<SId>
-} //todo
+}
