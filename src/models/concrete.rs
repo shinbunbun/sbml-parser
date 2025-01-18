@@ -7,6 +7,7 @@ pub mod event;
 pub mod function_definition;
 pub mod initial_assignment;
 pub mod math;
+pub mod message;
 pub mod model;
 pub mod notes;
 pub mod parameter;
