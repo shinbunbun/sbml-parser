@@ -38,3 +38,13 @@ pub struct Species {
     #[serde(rename = "conversionFactor")]
     pub conversion_factor: Option<SidRef>,
 }
+
+// Section4.8
+#[derive(Deserialize, Serialize, PartialEq, Debug, Clone)]
+pub struct InitialAssignment {
+    pub id: Option<Sid>,
+    pub symbol: SidRef,
+    pub math: Option<String>, //todo
+    #[serde(rename = "sboTerm")]
+    pub sbo_term: Option<SBOTerm>,
+}
