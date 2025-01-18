@@ -47,7 +47,7 @@ pub struct Parameter {
     pub units: Option<UnitSidRef>,
     pub constant: bool,
     #[serde(rename = "sboTerm")]
-    pub sbo_term: Option<String>, // todo: String->SBOTerm
+    pub sbo_term: Option<SBOTerm>,
 }
 
 // Section4.8
