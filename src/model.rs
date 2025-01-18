@@ -4,6 +4,7 @@ use serde::{Deserialize, Serialize};
 type Sid = String;
 type SidRef = String; //todo: This type is derived from SId, but with the restriction that the value of an attribute having type SIdRef must equal the value of some SId attribute in the model where it appears. In other words, a SIdRef value must be an existing identifier in a model.
 type SBOTerm = String;
+type Math = String;
 
 // p46/Section4.5
 #[derive(Deserialize, Serialize, PartialEq, Debug, Clone)]
@@ -55,7 +56,7 @@ pub struct Parameter {
 pub struct InitialAssignment {
     pub id: Option<Sid>,
     pub symbol: SidRef,
-    pub math: Option<String>, //todo
+    pub math: Option<Math>,
     #[serde(rename = "sboTerm")]
     pub sbo_term: Option<SBOTerm>,
 }
