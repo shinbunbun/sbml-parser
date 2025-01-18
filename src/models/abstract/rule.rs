@@ -4,6 +4,7 @@ use crate::models::concrete::math::Math;
 
 use super::s_base::SBase;
 
+// Section 4.9
 #[derive(Deserialize, Serialize, PartialEq, Debug, Clone)]
 pub struct Rule {
     #[serde(flatten)]

@@ -4,6 +4,7 @@ use crate::models::r#abstract::s_base::SBase;
 
 use super::model::Model;
 
+// Section4.1
 #[derive(Deserialize, Serialize, PartialEq, Debug, Clone)]
 pub struct SBML {
     /// fixed: 3

@@ -8,6 +8,7 @@ use super::{
     parameter::Parameter, reaction::Reaction, species::Species,
 };
 
+// Section 4.2
 #[derive(Deserialize, Serialize, PartialEq, Debug, Clone)]
 pub struct Model {
     #[serde(rename = "substanceUnits")]
