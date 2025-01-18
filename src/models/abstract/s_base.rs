@@ -2,7 +2,10 @@
 
 use serde::{Deserialize, Serialize};
 
-use crate::models::{concrete::{annotation::Annotation, notes::Notes}, primitive::{SBOTerm, SId, ID}};
+use crate::models::{
+    concrete::{annotation::Annotation, notes::Notes},
+    primitive::{SBOTerm, SId, ID},
+};
 
 #[derive(Deserialize, Serialize, PartialEq, Debug, Clone)]
 pub struct SBase {
@@ -14,5 +17,3 @@ pub struct SBase {
     pub notes: Option<Notes>,
     pub annotation: Option<Annotation>,
 }
-
-// todo: Notes, Annotation, SBML
