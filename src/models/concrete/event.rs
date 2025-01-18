@@ -11,7 +11,7 @@ pub struct Event {
     pub trigger: Option<Trigger>,
     pub priority: Option<Priority>,
     pub delay: Option<Delay>,
-    #[serde(rename = "ListOfEventAssignments")]
+    #[serde(rename = "listOfEventAssignments")]
     pub list_of_event_assignments: Option<ListOfEventAssignments>,
     #[serde(flatten)]
     pub s_base: SBase, // todo pub id: Option<SId>
