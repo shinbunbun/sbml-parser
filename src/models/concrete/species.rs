@@ -1,11 +1,13 @@
 use serde::{Deserialize, Serialize};
 
-use crate::models::primitive::{SId, SIdRef, UnitSidRef};
+use crate::models::{
+    primitive::{SIdRef, UnitSidRef},
+    r#abstract::s_base::SBase,
+};
 
 // Section4.6
 #[derive(Deserialize, Serialize, PartialEq, Debug, Clone)]
 pub struct Species {
-    pub id: SId,
     pub compartment: SIdRef, //todo: The required attribute compartment, of type SIdRef, is used to identify the compartment in which the species is located.
     #[serde(rename = "initialAmount")]
     pub initial_amount: Option<f64>,
@@ -20,4 +22,6 @@ pub struct Species {
     pub constant: bool,
     #[serde(rename = "conversionFactor")]
     pub conversion_factor: Option<SIdRef>,
+    #[serde(flatten)]
+    pub s_base: SBase, //todo: pub id: SId
 }
