@@ -1,8 +1,13 @@
 pub mod annotation;
-pub mod compoartment;
+pub mod compartment;
+pub mod constraint;
+pub mod event;
+pub mod function_definition;
 pub mod initial_assignment;
 pub mod math;
+pub mod model;
 pub mod notes;
 pub mod parameter;
+pub mod reaction;
 pub mod sbml;
 pub mod species;

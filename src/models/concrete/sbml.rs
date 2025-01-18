@@ -2,6 +2,8 @@ use serde::{Deserialize, Serialize};
 
 use crate::models::r#abstract::s_base::SBase;
 
+use super::model::Model;
+
 #[derive(Deserialize, Serialize, PartialEq, Debug, Clone)]
 pub struct SBML {
     /// fixed: 3
@@ -12,5 +14,5 @@ pub struct SBML {
     pub xmlns: String,
     #[serde(flatten)]
     pub s_base: SBase,
-    // pub model: Option<Model>,
+    pub model: Option<Model>,
 }
