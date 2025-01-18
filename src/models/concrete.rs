@@ -1,9 +1,7 @@
-use crate::unit::UnitSidRef;
 use serde::{Deserialize, Serialize};
 
-type Sid = String;
-type SidRef = String; //todo: This type is derived from SId, but with the restriction that the value of an attribute having type SIdRef must equal the value of some SId attribute in the model where it appears. In other words, a SIdRef value must be an existing identifier in a model.
-type SBOTerm = String;
+use super::primitive::{SBOTerm, SId, SIdRef, UnitSidRef};
+
 type Math = String;
 
 // p46/Section4.5
@@ -23,8 +21,8 @@ pub struct Compoartment {
 // Section4.6
 #[derive(Deserialize, Serialize, PartialEq, Debug, Clone)]
 pub struct Species {
-    pub id: Sid,
-    pub compartment: SidRef, //todo: The required attribute compartment, of type SIdRef, is used to identify the compartment in which the species is located.
+    pub id: SId,
+    pub compartment: SIdRef, //todo: The required attribute compartment, of type SIdRef, is used to identify the compartment in which the species is located.
     #[serde(rename = "initialAmount")]
     pub initial_amount: Option<f64>,
     #[serde(rename = "initialConcentration")]
@@ -37,13 +35,13 @@ pub struct Species {
     pub boundary_condition: bool,
     pub constant: bool,
     #[serde(rename = "conversionFactor")]
-    pub conversion_factor: Option<SidRef>,
+    pub conversion_factor: Option<SIdRef>,
 }
 
 // p53/Section4.7
 #[derive(Deserialize, Serialize, PartialEq, Debug, Clone)]
 pub struct Parameter {
-    pub id: Sid,
+    pub id: SId,
     pub value: Option<f64>,
     pub units: Option<UnitSidRef>,
     pub constant: bool,
@@ -54,8 +52,8 @@ pub struct Parameter {
 // Section4.8
 #[derive(Deserialize, Serialize, PartialEq, Debug, Clone)]
 pub struct InitialAssignment {
-    pub id: Option<Sid>,
-    pub symbol: SidRef,
+    pub id: Option<SId>,
+    pub symbol: SIdRef,
     pub math: Option<Math>,
     #[serde(rename = "sboTerm")]
     pub sbo_term: Option<SBOTerm>,

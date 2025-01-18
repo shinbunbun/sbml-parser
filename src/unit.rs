@@ -1,43 +1,6 @@
 use serde::{Deserialize, Serialize};
 
-#[derive(Deserialize, Serialize, PartialEq, Debug, Clone)]
-pub enum UnitSid {
-    Ampere,
-    Avogadro,
-    Becquerel,
-    Candela,
-    Coulomb,
-    Dimensionless,
-    Farad,
-    Gram,
-    Gray,
-    Henry,
-    Hertz,
-    Item,
-    Joule,
-    Katal,
-    Kelvin,
-    Kilogram,
-    Litre,
-    Lumen,
-    Lux,
-    Metre,
-    Mole,
-    Newton,
-    Ohm,
-    Pascal,
-    Radian,
-    Second,
-    Siemens,
-    Sievert,
-    Streradian,
-    Tesla,
-    Volt,
-    Watt,
-    Weber,
-}
-
-pub type UnitSidRef = UnitSid; //todo: This type is derived from UnitSId, but with the restriction that the value of an attribute having type UnitSIdRef must match either the value of a UnitSId attribute in the model, or one of the base units in Table 2 on p. 44
+use crate::models::primitive::UnitSid;
 
 /// A single Unit object instance takes one of the base units from Table 2 and specifies how it should be transformed.
 #[derive(Deserialize, Serialize, PartialEq, Debug, Clone)]

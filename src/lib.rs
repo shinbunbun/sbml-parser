@@ -1,4 +1,4 @@
-pub mod model;
+pub mod models;
 pub mod unit;
 
 pub fn add(left: u64, right: u64) -> u64 {
