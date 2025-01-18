@@ -3,6 +3,7 @@ use serde::{Deserialize, Serialize};
 
 type Sid = String;
 type SidRef = String; //todo: This type is derived from SId, but with the restriction that the value of an attribute having type SIdRef must equal the value of some SId attribute in the model where it appears. In other words, a SIdRef value must be an existing identifier in a model.
+type SBOTerm = String;
 
 // p46/Section4.5
 #[derive(Deserialize, Serialize, PartialEq, Debug, Clone)]
@@ -14,6 +15,8 @@ pub struct Compoartment {
     pub units: String,     // todo: Optional<UnitSidRef>, 4.5.4 The units attribute
     ///  Compartment also has a mandatory boolean attribute called constant that indicates whether the compart-40 ment’s size stays constant or can vary during a simulation. A value of “false” indicates the compartment’ size can be changed by other constructs in SBML. A value of “true” indicates the compartment’s size1 cannot be changed by any construct except InitialAssignment.
     pub constant: bool,
+    #[serde(rename = "sboTerm")]
+    pub sob_term: Option<SBOTerm>,
 }
 
 // Section4.6
