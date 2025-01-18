@@ -39,6 +39,17 @@ pub struct Species {
     pub conversion_factor: Option<SidRef>,
 }
 
+// p53/Section4.7
+#[derive(Deserialize, Serialize, PartialEq, Debug, Clone)]
+pub struct Parameter {
+    pub id: Sid,
+    pub value: Option<f64>,
+    pub units: Option<UnitSidRef>,
+    pub constant: bool,
+    #[serde(rename = "sboTerm")]
+    pub sbo_term: Option<String>, // todo: String->SBOTerm
+}
+
 // Section4.8
 #[derive(Deserialize, Serialize, PartialEq, Debug, Clone)]
 pub struct InitialAssignment {
