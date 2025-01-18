@@ -2,7 +2,7 @@
 
 use serde::{Deserialize, Serialize};
 
-use crate::models::primitive::{SBOTerm, SId, ID};
+use crate::models::{concrete::annotation::Annotation, primitive::{SBOTerm, SId, ID}};
 
 #[derive(Deserialize, Serialize, PartialEq, Debug, Clone)]
 pub struct SBase {
@@ -11,6 +11,8 @@ pub struct SBase {
     pub metaid: Option<ID>,
     #[serde(rename = "sboTerm")]
     pub sbo_term: Option<SBOTerm>,
+    pub notes: Option<Notes>,
+    pub annotation: Option<Annotation>,
 }
 
 // todo: Notes, Annotation, SBML
