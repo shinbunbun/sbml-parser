@@ -42,7 +42,7 @@ pub enum UnitSid {
 pub struct Unit {
     pub kind: UnitSid,
     pub exponent: f64,
-    pub scale: f64,
+    pub scale: i64,
     pub multiplier: f64,
 }
 
