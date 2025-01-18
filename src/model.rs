@@ -1,6 +1,6 @@
 use serde::{Deserialize, Serialize};
 
-/// p46/A compartment in SBML represents a bounded space in which species are located. Compartments do not33 necessarily have to correspond to actual structures inside or outside of a biological system, although models34 are often designed that way. The definition of Compartment is shown in Figure 13 on the following page.
+/// p46/Section4.5 
 #[derive(Deserialize, Serialize, PartialEq, Debug, Clone)]
 pub struct Compoartment {
     #[serde(rename = "spatialDimensions")]
