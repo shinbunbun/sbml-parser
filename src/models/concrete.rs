@@ -1,4 +1,6 @@
+pub mod algebraic_rule;
 pub mod annotation;
+pub mod assignment_rule;
 pub mod compartment;
 pub mod constraint;
 pub mod event;
@@ -8,6 +10,7 @@ pub mod math;
 pub mod model;
 pub mod notes;
 pub mod parameter;
+pub mod rate_rule;
 pub mod reaction;
 pub mod sbml;
 pub mod species;
