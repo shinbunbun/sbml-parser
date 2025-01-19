@@ -9,5 +9,6 @@ use super::s_base::SBase;
 pub struct Rule {
     #[serde(flatten)]
     pub s_base: SBase,
+    #[serde(skip_serializing_if = "Option::is_none")]
     pub math: Option<Math>,
 }

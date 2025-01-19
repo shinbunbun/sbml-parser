@@ -7,7 +7,9 @@ use super::{math::Math, message::Message};
 // Section 4.10
 #[derive(Deserialize, Serialize, PartialEq, Debug, Clone)]
 pub struct Constraint {
+    #[serde(skip_serializing_if = "Option::is_none")]
     pub math: Option<Math>,
+    #[serde(skip_serializing_if = "Option::is_none")]
     pub message: Option<Message>,
     #[serde(flatten)]
     pub s_base: SBase,

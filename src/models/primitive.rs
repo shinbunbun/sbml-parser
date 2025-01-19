@@ -10,6 +10,7 @@ pub type LocalSId = String;
 pub type SBOTerm = String;
 
 #[derive(Deserialize, Serialize, PartialEq, Debug, Clone)]
+#[serde(rename_all = "camelCase")]
 pub enum UnitSid {
     Ampere,
     Avogadro,

@@ -15,8 +15,8 @@ pub struct Unit {
 
 #[derive(Deserialize, Serialize, PartialEq, Debug, Clone)]
 pub struct ListOfUnits {
-    #[serde(flatten)]
-    pub units: Vec<Unit>,
+    #[serde(flatten, skip_serializing_if = "Option::is_none")]
+    pub units: Option<Vec<Unit>>,
     #[serde(flatten)]
     pub s_base: SBase,
 }

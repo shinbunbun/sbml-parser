@@ -11,19 +11,19 @@ use super::{
 // Section 4.2
 #[derive(Deserialize, Serialize, PartialEq, Debug, Clone)]
 pub struct Model {
-    #[serde(rename = "substanceUnits")]
+    #[serde(rename = "substanceUnits", skip_serializing_if = "Option::is_none")]
     substance_units: Option<UnitSidRef>,
-    #[serde(rename = "timeUnits")]
+    #[serde(rename = "timeUnits", skip_serializing_if = "Option::is_none")]
     time_units: Option<UnitSidRef>,
-    #[serde(rename = "volumeUnits")]
+    #[serde(rename = "volumeUnits", skip_serializing_if = "Option::is_none")]
     volume_units: Option<UnitSidRef>,
-    #[serde(rename = "areaUnits")]
+    #[serde(rename = "areaUnits", skip_serializing_if = "Option::is_none")]
     area_units: Option<UnitSidRef>,
-    #[serde(rename = "lengthUnits")]
+    #[serde(rename = "lengthUnits", skip_serializing_if = "Option::is_none")]
     length_units: Option<UnitSidRef>,
-    #[serde(rename = "extentUnits")]
+    #[serde(rename = "extentUnits", skip_serializing_if = "Option::is_none")]
     extent_units: Option<UnitSidRef>,
-    #[serde(rename = "conversionFactor")]
+    #[serde(rename = "conversionFactor", skip_serializing_if = "Option::is_none")]
     conversion_factor: Option<f64>,
 
     #[serde(rename = "listOfFunctionDefinitions")]
@@ -48,37 +48,46 @@ pub struct Model {
 
 #[derive(Deserialize, Serialize, PartialEq, Debug, Clone)]
 pub struct ListOfFunctionDefinitions {
-    function_definitions: Vec<FunctionDefinition>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    function_definitions: Option<Vec<FunctionDefinition>>,
 }
 #[derive(Deserialize, Serialize, PartialEq, Debug, Clone)]
 pub struct ListOfUnitDefinitions {
-    unit_definitions: Vec<UnitDefinition>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    unit_definitions: Option<Vec<UnitDefinition>>,
 }
 #[derive(Deserialize, Serialize, PartialEq, Debug, Clone)]
 pub struct ListOfCompartments {
-    compartments: Vec<Compartment>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    compartments: Option<Vec<Compartment>>,
 }
 #[derive(Deserialize, Serialize, PartialEq, Debug, Clone)]
 pub struct ListOfSpecies {
-    species: Vec<Species>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    species: Option<Vec<Species>>,
 }
 #[derive(Deserialize, Serialize, PartialEq, Debug, Clone)]
 pub struct ListOfParameters {
-    parameters: Vec<Parameter>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    parameters: Option<Vec<Parameter>>,
 }
 #[derive(Deserialize, Serialize, PartialEq, Debug, Clone)]
 pub struct ListOfInitialAssignments {
-    initial_assignments: Vec<InitialAssignment>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    initial_assignments: Option<Vec<InitialAssignment>>,
 }
 #[derive(Deserialize, Serialize, PartialEq, Debug, Clone)]
 pub struct ListOfConstraints {
-    constraints: Vec<Constraint>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    constraints: Option<Vec<Constraint>>,
 }
 #[derive(Deserialize, Serialize, PartialEq, Debug, Clone)]
 pub struct ListOfReactions {
-    reactions: Vec<Reaction>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    reactions: Option<Vec<Reaction>>,
 }
 #[derive(Deserialize, Serialize, PartialEq, Debug, Clone)]
 pub struct ListOfEvents {
-    events: Vec<Event>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    events: Option<Vec<Event>>,
 }

@@ -15,5 +15,6 @@ pub struct SBML {
     pub xmlns: String,
     #[serde(flatten)]
     pub s_base: SBase,
+    #[serde(skip_serializing_if = "Option::is_none")]
     pub model: Option<Model>,
 }
