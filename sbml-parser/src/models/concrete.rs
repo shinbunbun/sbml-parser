@@ -21,7 +21,6 @@ pub mod priority;
 pub mod rate_rule;
 pub mod reaction;
 pub mod sbml;
-pub mod simple_species_reference;
 pub mod species;
 pub mod species_reference;
 pub mod trigger;
