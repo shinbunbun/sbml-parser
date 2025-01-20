@@ -15,18 +15,18 @@ use super::{
 pub struct Event {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub id: Option<ID>,
-    #[serde(rename = "sboTerm", skip_serializing_if = "Option::is_none")]
+    #[serde(rename = "@sboTerm", skip_serializing_if = "Option::is_none")]
     pub sbo_term: Option<SBOTerm>,
-    #[serde(rename = "useValuesFromTriggerTime")]
+    #[serde(rename = "@useValuesFromTriggerTime")]
     pub use_values_from_trigger_time: bool,
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(rename = "@trigger", skip_serializing_if = "Option::is_none")]
     pub trigger: Option<Trigger>,
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(rename = "@priority", skip_serializing_if = "Option::is_none")]
     pub priority: Option<Priority>,
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(rename = "@delay", skip_serializing_if = "Option::is_none")]
     pub delay: Option<Delay>,
     #[serde(
-        rename = "listOfEventAssignments",
+        rename = "@listOfEventAssignments",
         skip_serializing_if = "Option::is_none"
     )]
     pub list_of_event_assignments: Option<ListOfEventAssignments>,
