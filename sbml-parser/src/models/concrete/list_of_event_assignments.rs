@@ -1,6 +1,6 @@
 use serde::{Deserialize, Serialize};
 
-use crate::models::r#abstract::s_base::SBase;
+use crate::models::r#abstract::s_base::SBaseAttributes;
 
 use super::event_assignment::EventAssignment;
 
@@ -9,6 +9,6 @@ use super::event_assignment::EventAssignment;
 pub struct ListOfEventAssignments {
     #[serde(rename = "eventAssignment", skip_serializing_if = "Option::is_none")]
     pub event_assignment: Option<Vec<EventAssignment>>,
-    #[serde(flatten)]
-    pub s_base: SBase,
 }
+
+impl SBaseAttributes for ListOfEventAssignments {}
