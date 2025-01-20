@@ -6,11 +6,11 @@ use crate::models::{primitive::ID, r#abstract::s_base::SBaseAttributes};
 // p79/Section4.12.3
 #[derive(Deserialize, Serialize, PartialEq, Debug, Clone)]
 pub struct Priority {
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(rename = "@id", skip_serializing_if = "Option::is_none")]
     pub id: Option<ID>,
-    #[serde(rename = "sboTerm", skip_serializing_if = "Option::is_none")]
+    #[serde(rename = "@sboTerm", skip_serializing_if = "Option::is_none")]
     pub sbo_term: Option<ID>,
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(rename = "@math", skip_serializing_if = "Option::is_none")]
     pub math: Option<Math>,
 }
 

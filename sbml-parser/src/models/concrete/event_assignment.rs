@@ -9,12 +9,13 @@ use crate::models::{
 // p79/Section4.12
 #[derive(Deserialize, Serialize, PartialEq, Debug, Clone)]
 pub struct EventAssignment {
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(rename = "@id", skip_serializing_if = "Option::is_none")]
     pub id: Option<ID>,
-    #[serde(rename = "sboTerm", skip_serializing_if = "Option::is_none")]
+    #[serde(rename = "@sboTerm", skip_serializing_if = "Option::is_none")]
     pub sbo_term: Option<SBOTerm>,
+    #[serde(rename = "@variable")]
     pub variable: SIdRef,
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(rename = "@math", skip_serializing_if = "Option::is_none")]
     pub math: Option<Math>,
 }
 

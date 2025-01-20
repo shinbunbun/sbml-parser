@@ -10,13 +10,15 @@ use super::math::Math;
 // Section 4.9.3
 #[derive(Deserialize, Serialize, PartialEq, Debug, Clone)]
 pub struct AssignmentRule {
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(rename = "@id", skip_serializing_if = "Option::is_none")]
     pub id: Option<ID>,
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(rename = "@name", skip_serializing_if = "Option::is_none")]
     pub name: Option<String>,
-    #[serde(rename = "sboTerm", skip_serializing_if = "Option::is_none")]
+    #[serde(rename = "@sboTerm", skip_serializing_if = "Option::is_none")]
     pub sbo_term: Option<SBOTerm>,
+    #[serde(rename = "@math")]
     pub math: Option<Math>,
+    #[serde(rename = "@variable")]
     pub variable: SIdRef,
 }
 

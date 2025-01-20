@@ -10,13 +10,13 @@ use super::{local_parameter::LocalParameter, math::Math};
 // Section 4.11.5
 #[derive(Deserialize, Serialize, PartialEq, Debug, Clone)]
 pub struct KineticLaw {
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(rename = "@id", skip_serializing_if = "Option::is_none")]
     pub id: Option<ID>,
-    #[serde(rename = "sboTerm", skip_serializing_if = "Option::is_none")]
+    #[serde(rename = "@sboTerm", skip_serializing_if = "Option::is_none")]
     pub sbo_term: Option<SBOTerm>,
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(rename = "@math", skip_serializing_if = "Option::is_none")]
     pub math: Option<Math>,
-    #[serde(rename = "listOfLocalParameters")]
+    #[serde(rename = "@listOfLocalParameters")]
     pub list_of_local_parameters: Option<ListOfLocalParameters>,
 }
 
