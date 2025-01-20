@@ -9,12 +9,13 @@ use crate::models::{
 #[derive(Deserialize, Serialize, PartialEq, Debug, Clone)]
 pub struct Parameter {
     pub id: ID,
-    #[serde(rename = "sboTerm", skip_serializing_if = "Option::is_none")]
+    #[serde(rename = "@sboTerm", skip_serializing_if = "Option::is_none")]
     pub sbo_term: Option<SBOTerm>,
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(rename = "@value", skip_serializing_if = "Option::is_none")]
     pub value: Option<f64>,
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(rename = "@units", skip_serializing_if = "Option::is_none")]
     pub units: Option<UnitSidRef>,
+    #[serde(rename = "@constant")]
     pub constant: bool,
 }
 

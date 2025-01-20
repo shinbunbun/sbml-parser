@@ -10,21 +10,24 @@ use super::model::Model;
 // Section4.1
 #[derive(Deserialize, Serialize, PartialEq, Debug, Clone)]
 pub struct SBML {
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(rename = "@id", skip_serializing_if = "Option::is_none")]
     pub id: Option<ID>,
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(rename = "@name", skip_serializing_if = "Option::is_none")]
     pub name: Option<String>,
-    #[serde(rename = "sboTerm", skip_serializing_if = "Option::is_none")]
+    #[serde(rename = "@sboTerm", skip_serializing_if = "Option::is_none")]
     pub sbo_term: Option<SBOTerm>,
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(rename = "@metaid", skip_serializing_if = "Option::is_none")]
     pub metaid: Option<ID>,
     /// fixed: 3
+    #[serde(rename = "@level")]
     pub level: u8,
     /// fixed: 2
+    #[serde(rename = "@version")]
     pub version: u8,
     /// fixed: http://www.sbml.org/sbml/level3/version2/core
+    #[serde(rename = "@xmlns")]
     pub xmlns: String,
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(rename = "@model", skip_serializing_if = "Option::is_none")]
     pub model: Option<Model>,
 }
 

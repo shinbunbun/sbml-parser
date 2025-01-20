@@ -11,9 +11,9 @@ use super::math::Math;
 #[derive(Deserialize, Serialize, PartialEq, Debug, Clone)]
 pub struct FunctionDefinition {
     pub id: SId,
-    #[serde(rename = "sboTerm", skip_serializing_if = "Option::is_none")]
+    #[serde(rename = "@sboTerm", skip_serializing_if = "Option::is_none")]
     pub sbo_term: Option<SBOTerm>,
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(rename = "@math", skip_serializing_if = "Option::is_none")]
     pub math: Option<Math>,
 }
 
