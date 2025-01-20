@@ -14,9 +14,9 @@ pub struct Constraint {
     pub id: Option<ID>,
     #[serde(rename = "@sboTerm", skip_serializing_if = "Option::is_none")]
     pub sbo_term: Option<SBOTerm>,
-    #[serde(rename = "math", skip_serializing_if = "Option::is_none")]
+    #[serde(rename = "@math", skip_serializing_if = "Option::is_none")]
     pub math: Option<Math>,
-    #[serde(rename ="message", skip_serializing_if = "Option::is_none")]
+    #[serde(rename ="@message", skip_serializing_if = "Option::is_none")]
     pub message: Option<Message>,
 }
 
