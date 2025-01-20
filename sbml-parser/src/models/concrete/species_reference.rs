@@ -12,7 +12,7 @@ use crate::models::{
 pub struct SpeciesReference {
     #[serde(rename = "@id", skip_serializing_if = "Option::is_none")]
     pub id: Option<ID>,
-    #[serde(rename = "species")]
+    #[serde(rename = "@species")]
     pub species: SIdRef,
     #[serde(rename = "@stoichiometry", skip_serializing_if = "Option::is_none")]
     pub stoichiometry: Option<f64>,
