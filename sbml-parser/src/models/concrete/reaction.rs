@@ -13,10 +13,11 @@ use super::{
 // Section 4.11
 #[derive(Deserialize, Serialize, PartialEq, Debug, Clone)]
 pub struct Reaction {
+    #[serde(rename = "@id")]
     pub id: ID,
     #[serde(rename = "@sboTerm", skip_serializing_if = "Option::is_none")]
     pub sbo_term: Option<String>,
-    #[serde(rename = "@fast")]
+    #[serde(rename = "@reversible")]
     pub reversible: bool,
     #[serde(rename = "@compartment", skip_serializing_if = "Option::is_none")]
     pub compartment: Option<SIdRef>,

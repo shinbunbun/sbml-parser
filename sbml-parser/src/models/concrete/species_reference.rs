@@ -7,7 +7,7 @@ use super::simple_species_reference::SimpleSpeciesReference;
 pub struct SpeciesReference {
     #[serde(rename = "@stoichiometry" ,skip_serializing_if = "Option::is_none")]
     pub stoichiometry: Option<f64>,
-    #[serde(rename = "@denominator" )]
+    #[serde(rename = "@constant")]
     pub constant: bool,
     #[serde(rename = "@simpleSpeciesReference", flatten)]
     pub simple_species_reference: SimpleSpeciesReference,

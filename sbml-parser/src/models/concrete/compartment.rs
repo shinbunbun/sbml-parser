@@ -5,6 +5,7 @@ use crate::models::{primitive::SId, r#abstract::s_base::SBaseAttributes};
 // p46/Section4.5
 #[derive(Deserialize, Serialize, PartialEq, Debug, Clone)]
 pub struct Compartment {
+    #[serde(rename = "@id")]
     pub id: SId,
     #[serde(rename = "@spatialDimensions", skip_serializing_if = "Option::is_none")]
     pub spatial_dimensions: Option<f64>,

@@ -8,6 +8,7 @@ use crate::models::{
 // Section 4.11.6
 #[derive(Deserialize, Serialize, PartialEq, Debug, Clone)]
 pub struct LocalParameter {
+    #[serde(rename = "@id")]
     pub id: LocalSId,
     #[serde(rename = "@sboTerm", skip_serializing_if = "Option::is_none")]
     pub sbo_term: Option<SBOTerm>,

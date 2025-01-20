@@ -14,7 +14,7 @@ pub struct RateRule {
     pub name: Option<String>,
     #[serde(rename = "@sboTerm", skip_serializing_if = "Option::is_none")]
     pub sbo_term: Option<SBOTerm>,
-    #[serde(rename = "@formula")]
+    #[serde(rename = "@variable")]
     pub variable: SIdRef,
 }
 

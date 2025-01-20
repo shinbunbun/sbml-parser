@@ -10,6 +10,7 @@ use super::math::Math;
 // Section 4.3
 #[derive(Deserialize, Serialize, PartialEq, Debug, Clone)]
 pub struct FunctionDefinition {
+    #[serde(rename = "@id")]
     pub id: SId,
     #[serde(rename = "@sboTerm", skip_serializing_if = "Option::is_none")]
     pub sbo_term: Option<SBOTerm>,

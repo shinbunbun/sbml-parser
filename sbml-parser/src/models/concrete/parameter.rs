@@ -8,6 +8,7 @@ use crate::models::{
 // p53/Section4.7
 #[derive(Deserialize, Serialize, PartialEq, Debug, Clone)]
 pub struct Parameter {
+    #[serde(rename = "@id")]
     pub id: ID,
     #[serde(rename = "@sboTerm", skip_serializing_if = "Option::is_none")]
     pub sbo_term: Option<SBOTerm>,
