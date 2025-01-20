@@ -7,8 +7,9 @@ use crate::models::r#abstract::s_base::SBaseAttributes;
 // Section4.6
 #[derive(Deserialize, Serialize, PartialEq, Debug, Clone)]
 pub struct Species {
+    #[serde(rename = "@id")]
     pub id: SId,
-    #[serde(rename = "sboTerm", skip_serializing_if = "Option::is_none")]
+    #[serde(rename = "@sboTerm", skip_serializing_if = "Option::is_none")]
     pub sbo_term: Option<SBOTerm>,
     #[serde(rename = "@compartment")]
     pub compartment: SIdRef, //todo: The required attribute compartment, of type SIdRef, is used to identify the compartment in which the species is located.
